@@ -30,13 +30,13 @@ Block ExpressionBlockInputStream::getHeader() const
 
 Block ExpressionBlockInputStream::readImpl()
 {
-    if (!initialized)
-    {
-        if (expression->resultIsAlwaysEmpty())
-            return {};
-
-        initialized = true;
-    }
+//    if (!initialized)
+//    {
+//        if (expression->resultIsAlwaysEmpty())
+//            return {};
+//
+//        initialized = true;
+//    }
 
     Block res = children.back()->read();
     if (res)

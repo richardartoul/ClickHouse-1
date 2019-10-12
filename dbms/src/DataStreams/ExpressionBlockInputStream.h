@@ -31,7 +31,7 @@ protected:
 private:
     ExpressionActionsPtr expression;
     Block cached_header;
-    bool initialized = false;
+    /// bool initialized = false;
 };
 
 }
