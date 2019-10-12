@@ -449,7 +449,7 @@ void Connection::sendData(const Block & block, const String & name)
     {
         if (compression == Protocol::Compression::Enable)
             maybe_compressed_out = std::make_shared<CompressedWriteBuffer>(*out, compression_codec);
-            static_cast<CompressedReadBuffer &>(*maybe_compressed_out).disableChecksumming();
+            static_cast<std::shared_ptr<CompressedWriteBuffer>>(*maybe_compressed_out).disableChecksumming();
         else
             maybe_compressed_out = out;
 
